@@ -40,6 +40,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MedHomePage',
           path: '/medHomePage',
           builder: (context, params) => const MedHomePageWidget(),
+        ),
+        FFRoute(
+          name: 'ChooseMedicationType',
+          path: '/chooseMedicationType',
+          builder: (context, params) => const ChooseMedicationTypeWidget(),
+        ),
+        FFRoute(
+          name: 'SetSchedule',
+          path: '/setSchedule',
+          builder: (context, params) => const SetScheduleWidget(),
+        ),
+        FFRoute(
+          name: 'Create05PatientIntake',
+          path: '/create05PatientIntake',
+          builder: (context, params) => const Create05PatientIntakeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

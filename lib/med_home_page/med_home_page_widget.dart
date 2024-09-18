@@ -169,318 +169,352 @@ class _MedHomePageWidgetState extends State<MedHomePageWidget>
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
+          child: Stack(
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[].divide(const SizedBox(width: 16.0)),
-              ),
-              FlutterFlowCalendar(
-                color: FlutterFlowTheme.of(context).primary,
-                iconColor: FlutterFlowTheme.of(context).secondaryText,
-                weekFormat: false,
-                weekStartsMonday: false,
-                rowHeight: 2.0,
-                onChange: (DateTimeRange? newSelectedDate) {
-                  safeSetState(
-                      () => _model.calendarSelectedDay = newSelectedDate);
-                },
-                titleStyle: FlutterFlowTheme.of(context).titleLarge.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-                dayOfWeekStyle: FlutterFlowTheme.of(context).bodyLarge.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
-                dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
-                selectedDateStyle:
-                    FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter',
-                          letterSpacing: 0.0,
-                        ),
-                inactiveDateStyle:
-                    FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Inter',
-                          letterSpacing: 0.0,
-                        ),
-              ),
-              const Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [],
-              ),
               Column(
                 mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                    child: Text(
-                      'Add Medication',
-                      style: FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Outfit',
-                            color: Colors.black,
-                            fontSize: 17.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
                           ),
-                    ).animateOnPageLoad(
-                        animationsMap['textOnPageLoadAnimation1']!),
-                  ),
-                  ListView(
-                    padding: const EdgeInsets.fromLTRB(
-                      0,
-                      0,
-                      0,
-                      44.0,
+                        ),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
+                  ),
+                  FlutterFlowCalendar(
+                    color: FlutterFlowTheme.of(context).primary,
+                    iconColor: FlutterFlowTheme.of(context).secondaryText,
+                    weekFormat: false,
+                    weekStartsMonday: false,
+                    rowHeight: 2.0,
+                    onChange: (DateTimeRange? newSelectedDate) {
+                      safeSetState(
+                          () => _model.calendarSelectedDay = newSelectedDate);
+                    },
+                    titleStyle:
+                        FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                    dayOfWeekStyle:
+                        FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                            ),
+                    dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          letterSpacing: 0.0,
+                        ),
+                    selectedDateStyle:
+                        FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                            ),
+                    inactiveDateStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                            ),
+                  ),
+                  const Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        child: Container(
-                          width: 100.0,
-                          height: 150.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 3.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  1.0,
-                                ),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color: const Color(0xFFE5E7EB),
-                              width: 1.0,
-                            ),
-                          ),
-                          child: Stack(
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      'https://img.freepik.com/premium-vector/isometric-medical-card_188544-6929.jpg?ga=GA1.1.86454189.1726235849&semt=ais_hybrid',
-                                      width: 140.0,
-                                      height: 200.0,
-                                      fit: BoxFit.cover,
-                                    ),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
+                        child: Text(
+                          'Add Medication',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.black,
+                                    fontSize: 17.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Add a Medication to Your List',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color: Colors.black,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                        ).animateOnPageLoad(
+                            animationsMap['textOnPageLoadAnimation1']!),
+                      ),
+                      ListView(
+                        padding: const EdgeInsets.fromLTRB(
+                          0,
+                          0,
+                          0,
+                          44.0,
+                        ),
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 150.0,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: const [
+                                  BoxShadow(
+                                    blurRadius: 3.0,
+                                    color: Color(0x33000000),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
+                                    ),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(12.0),
+                                border: Border.all(
+                                  color: const Color(0xFFE5E7EB),
+                                  width: 1.0,
+                                ),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          'https://img.freepik.com/premium-vector/isometric-medical-card_188544-6929.jpg?ga=GA1.1.86454189.1726235849&semt=ais_hybrid',
+                                          width: 140.0,
+                                          height: 200.0,
+                                          fit: BoxFit.cover,
                                         ),
-                                        Text(
-                                          'When you add medications\nyou can set and track what you take',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color: const Color(0xFF606A85),
-                                                fontSize: 12.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                        ),
-                                        Row(
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(12.0),
+                                        child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Add a Medication',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Figtree',
-                                                    color: const Color(0xFF5AC8FA),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
+                                              'Add a Medication to Your List',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color: Colors.black,
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                             ),
-                                            const Icon(
-                                              Icons.chevron_right_rounded,
-                                              color: Color(0xFF606A85),
-                                              size: 24.0,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation1']!),
-                      ),
-                    ].divide(const SizedBox(height: 12.0)),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                    child: Text(
-                      'Your Medications',
-                      style: FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Outfit',
-                            color: Colors.black,
-                            fontSize: 17.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ).animateOnPageLoad(
-                        animationsMap['textOnPageLoadAnimation2']!),
-                  ),
-                  ListView(
-                    padding: const EdgeInsets.fromLTRB(
-                      0,
-                      0,
-                      0,
-                      44.0,
-                    ),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        child: Container(
-                          width: 100.0,
-                          height: 150.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 3.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  1.0,
-                                ),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color: const Color(0xFFE5E7EB),
-                              width: 1.0,
-                            ),
-                          ),
-                          child: Stack(
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      'https://img.freepik.com/free-vector/clean-medical-patterned-background-vector_53876-175207.jpg?ga=GA1.1.86454189.1726235849&semt=ais_hybrid',
-                                      width: 140.0,
-                                      height: 200.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
                                             Text(
-                                              'Biogesic',
+                                              'When you add medications\nyou can set and track what you take',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .labelMedium
                                                   .override(
                                                     fontFamily: 'Outfit',
                                                     color: const Color(0xFF606A85),
-                                                    fontSize: 14.0,
+                                                    fontSize: 12.0,
                                                     letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
+                                                    fontWeight: FontWeight.bold,
                                                   ),
                                             ),
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      100.0, 0.0, 0.0, 0.0),
-                                              child: Icon(
-                                                Icons.chevron_right_rounded,
-                                                color: Color(0xFF606A85),
-                                                size: 24.0,
-                                              ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  'Add a Medication',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Figtree',
+                                                        color:
+                                                            const Color(0xFF5AC8FA),
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                ),
+                                                const Icon(
+                                                  Icons.chevron_right_rounded,
+                                                  color: Color(0xFF606A85),
+                                                  size: 24.0,
+                                                ),
+                                              ],
                                             ),
                                           ],
                                         ),
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: RichText(
-                                              textScaler: MediaQuery.of(context)
-                                                  .textScaler,
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text: 'Capsule',
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ).animateOnPageLoad(animationsMap[
+                                'containerOnPageLoadAnimation1']!),
+                          ),
+                        ].divide(const SizedBox(height: 12.0)),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
+                        child: Text(
+                          'Your Medications',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.black,
+                                    fontSize: 17.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ).animateOnPageLoad(
+                            animationsMap['textOnPageLoadAnimation2']!),
+                      ),
+                      ListView(
+                        padding: const EdgeInsets.fromLTRB(
+                          0,
+                          0,
+                          0,
+                          44.0,
+                        ),
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 150.0,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: const [
+                                  BoxShadow(
+                                    blurRadius: 3.0,
+                                    color: Color(0x33000000),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
+                                    ),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(12.0),
+                                border: Border.all(
+                                  color: const Color(0xFFE5E7EB),
+                                  width: 1.0,
+                                ),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          'https://img.freepik.com/free-vector/clean-medical-patterned-background-vector_53876-175207.jpg?ga=GA1.1.86454189.1726235849&semt=ais_hybrid',
+                                          width: 140.0,
+                                          height: 200.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(12.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  'Biogesic',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            const Color(0xFF606A85),
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                                const Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          100.0, 0.0, 0.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.chevron_right_rounded,
+                                                    color: Color(0xFF606A85),
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Expanded(
+                                              child: Align(
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text: 'Capsule',
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .displayMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              color: const Color(
+                                                                  0xFF15161E),
+                                                              fontSize: 23.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                            ),
+                                                      ),
+                                                      const TextSpan(
+                                                        text: '2ml',
+                                                        style: TextStyle(),
+                                                      )
+                                                    ],
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .displayMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color:
-                                                              const Color(0xFF15161E),
-                                                          fontSize: 23.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                                  ),
-                                                  const TextSpan(
-                                                    text: '2ml',
-                                                    style: TextStyle(),
-                                                  )
-                                                ],
-                                                style:
-                                                    FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
@@ -491,50 +525,55 @@ class _MedHomePageWidgetState extends State<MedHomePageWidget>
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        const Divider(
-                                          thickness: 1.0,
-                                          color: Color(0xFFE5E7EB),
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            const Icon(
-                                              Icons.calendar_today,
-                                              color: Color(0xFF606A85),
-                                              size: 20.0,
+                                            const Divider(
+                                              thickness: 1.0,
+                                              color: Color(0xFFE5E7EB),
                                             ),
-                                            Text(
-                                              'Everyday',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF606A85),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                const Icon(
+                                                  Icons.calendar_today,
+                                                  color: Color(0xFF606A85),
+                                                  size: 20.0,
+                                                ),
+                                                Text(
+                                                  'Everyday',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            const Color(0xFF606A85),
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ],
                                             ),
                                           ],
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                            ],
+                            ).animateOnPageLoad(animationsMap[
+                                'containerOnPageLoadAnimation2']!),
                           ),
-                        ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation2']!),
+                        ].divide(const SizedBox(height: 12.0)),
                       ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ],
                   ),
                 ],
               ),
